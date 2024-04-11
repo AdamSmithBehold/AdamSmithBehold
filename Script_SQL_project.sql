@@ -42,7 +42,7 @@ JOIN warehouses AS w ON p.warehouseCode = w.warehouseCode
 GROUP BY w.warehouseCode, w.warehouseName, p.productLine
 order by total_product ,warehouseCode asc;
 
--- Q.5 What is the current storage location of each product?
+-- What is the current storage location of each product?
 SELECT 
     p.productname,
     p.quantityinstock,
@@ -53,7 +53,7 @@ FROM
         JOIN
     warehouses w ON p.warehouseCode = w.warehouseCode;
 
-# Q.6 Can you identify products that share the same storage location?   
+-- Can you identify products that share the same storage location?   
  SELECT 
     productname, 
     warehouseCode
@@ -61,7 +61,7 @@ FROM
     products
     order by warehouseCode;
     
-# Q.7 Are there products with low quantities that can be consolidated into fewer storage locations?
+-- Are there products with low quantities that can be consolidated into fewer storage locations?
  SELECT 
     productcode,
     productname,
